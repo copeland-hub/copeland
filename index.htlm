@@ -1,0 +1,127 @@
+dependencies {
+  implementation 'com.google.mlkit:barcode-scanning:1.0.0'
+}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copeland Cyber Tech Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+            margin: 0 0.5rem;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .container {
+            padding: 2rem;
+        }
+        .service {
+            margin-bottom: 2rem;
+        }
+        .payment {
+            margin-top: 2rem;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Copeland Cyber Tech Online</h1>
+        <p>Your One-Stop Hub for Government and Global Services</p>
+    </header>
+
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#payment">Payment</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <div class="container" id="services">
+        <h2>Government of Kenya Services</h2>
+        <div class="service">
+            <h3>E-Citizen Services</h3>
+            <p>Access services like ID applications, KRA PIN registration, marriage certificates, and more.</p>
+        </div>
+        <div class="service">
+            <h3>NTSA Services</h3>
+            <p>Book driving tests, renew licenses, and pay for traffic offenses.</p>
+        </div>
+        <div class="service">
+            <h3>NHIF & NSSF</h3>
+            <p>Register, make payments, and track your contributions.</p>
+        </div>
+
+        <h2>Worldly Services</h2>
+        <div class="service">
+            <h3>Online Applications</h3>
+            <p>Passport applications, visa assistance, and international job applications.</p>
+        </div>
+        <div class="service">
+            <h3>Freelance Assistance</h3>
+            <p>Get help with platforms like Upwork, Fiverr, and transcription websites.</p>
+        </div>
+    </div>
+
+    <div class="container" id="payment">
+        <h2>Payment</h2>
+        <div class="payment">
+            <p><strong>Till Number:</strong> 4899208</p>
+            <form id="paymentForm">
+                <label for="phone">Enter Your Phone Number:</label><br>
+                <input type="text" id="phone" name="phone" placeholder="07XXXXXXXX" required><br><br>
+                <button type="button" onclick="makePayment()">Pay Now</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Copeland Cyber Tech. All Rights Reserved. Visit us at <a href="https://copelandcybertech.com">copelandcybertech.com</a></p>
+    </footer>
+
+    <script>
+        function makePayment() {
+            const phone = document.getElementById('phone').value;
+            if (!phone.match(/^07\d{8}$/)) {
+                alert('Please enter a valid phone number.');
+                return;
+            }
+
+            // Simulating Lipa na Mpesa integration
+            alert(`Payment prompt sent to ${phone} using Till Number 4899208. Follow the instructions on your phone to complete the payment.`);
+        }
+    </script>
+</body>
+</html>
